@@ -1,0 +1,4 @@
+function takeANumber (currentLine, name) {
+  
+
+}
