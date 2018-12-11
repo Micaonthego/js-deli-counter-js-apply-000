@@ -1,6 +1,11 @@
-function takeANumber (katzDeliLine, name) {
-  katzDeliLine.push(name) 
-  return "Welcome, " + name + ". You are number " + katzDeliLine.length + " in line."
+// function takeANumber (katzDeliLine, name) {
+//   katzDeliLine.push(name) 
+//   return "Welcome, " + name + ". You are number " + katzDeliLine.length + " in line."
+// }
+var counter = 1
+function takeANumber (katzDeliLine) {
+  katzDeliLine.push(counter++)
+  return "You are number" + counter-1
 }
 
 function nowServing (katzDeliLine) {
@@ -17,6 +22,23 @@ function currentLine (katzDeliLine) {
     line.push(`${i+1}. ${katzDeliLine[i]}`)
     }
     return `The line is currently: ${line.join(", ")}`
+      }else{ 
+    return "The line is currently empty."
+        }
+}
+
+function currentLine (katzDeliLine) {
+  if (katzDeliLine.length > 0) {
+    var string = "The line is currently: "
+    for (let i = 0; i < katzDeliLine.length; i++) {
+      if (i === katzDeliLine.length - 1) {
+        string += `${i+1}. ${katzDeliLine[i]}`
+      }
+      else {
+        string += `${i+1}. ${katzDeliLine[i]}, `
+      }
+    }
+    return string
       }else{ 
     return "The line is currently empty."
         }
